@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use these materials, please cite the published article and this repository."
+title: "Research materials for 'Platform Oversight in Practice: How Language Shapes Procedure, Not Outcome, in Meta’s Oversight Board'"
+type: dataset
+authors:
+  - family-names: "Chala"
+    given-names: "Endalkachew H."
+    orcid: "https://orcid.org/0000-0001-6210-6706"
+license: MIT
+url: "https://github.com/Endalk-Chala/Oversight-Board-Case-Analysis"
+preferred-citation:
+  type: article
+  title: "Platform Oversight in Practice: How Language Shapes Procedure, Not Outcome, in Meta’s Oversight Board"
+  journal: "Journal of Online Trust and Safety"
+  volume: 3
+  issue: 3
+  year: 2026
+  doi: "10.54501/jots.v3i3.333"
+  url: "https://doi.org/10.54501/jots.v3i3.333"
+  authors:
+    - family-names: "Chala"
+      given-names: "Endalkachew H."
+      orcid: "https://orcid.org/0000-0001-6210-6706"
