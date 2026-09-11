@@ -1,60 +1,73 @@
-# Meta Oversight Board Case Selection Analysis
+# Platform Oversight in Practice
 
-## Introduction
+Research materials for:
 
-The Meta Oversight Board was conceived as an independent, quasi-judicial body to review and remediate Facebook and Instagram’s content moderation decisions. Since its inception, it has been both lauded for enhancing transparency and criticized for its pace and scope. Journalistic accounts — for example, Casey Newton’s exposé on the Board’s sluggishness in 2023 (Newton, 2023) — and advocacy reports — such as Robera Hamda’s analysis of the Dangerous Individuals and Organizations list’s impact on Oromo users in Ethiopia (Hamda, 2021) — highlight persistent concerns about delays and demographic blind spots. 
+**Chala, Endalkachew H. (2026). “Platform Oversight in Practice: How Language Shapes Procedure, Not Outcome, in Meta’s Oversight Board.” _Journal of Online Trust and Safety_, 3(3).**  
+[https://doi.org/10.54501/jots.v3i3.333](https://doi.org/10.54501/jots.v3i3.333)
 
-Academic critiques further nuance this picture. Evelyn Douek (2024) observes that, despite acquiring institutional legitimacy, the Board often sidesteps the toughest questions and lacks clear metrics to evaluate its substantive impact. Wong & Floridi (2022) map the Board’s strengths in transparency and policy influence alongside weaknesses in jurisdictional limits and diversity. These scholarly insights underscore the need to scrutinize how the Board selects cases for review.
+## Study overview
 
-This project interrogates the proportionality and representativeness of the Board’s case selection, both by topic and geographic region, to reveal any systematic discrepancies that may undermine its legitimacy and efficacy.
+This project examines how Meta’s Oversight Board distributes institutional attention across languages, regions, policy domains, and procedural pathways. The published study analyzes **147 Oversight Board decisions issued between 2020 and 2025**, coding geographic distribution, linguistic representation, policy domain, adjudicative outcomes, and review procedure.
 
-## Research Questions
+The central finding is that **language shapes procedure more than outcome**. Adjudicative outcomes do not differ significantly by language or geopolitical classification, but English-language cases are more often resolved through summary reversal, while non-English cases proceed disproportionately to full panel review. The study therefore argues that the legitimacy of platform oversight cannot be evaluated through outcome parity or demographic representation alone; case selection and procedural routing also matter.
 
-1. **Topical Proportionality**  
-   - What is the distribution of Oversight Board decisions across content-policy topics (e.g., Hateful Conduct, Dangerous Organizations, Freedom of Expression)?  
-   - Are certain topics over- or under-represented relative to the prevalence of reported moderation disputes on those issues?
+## Research questions
 
-2. **Geographic Representativeness**  
-   - How are cases distributed by the geographic region of the content origin or affected users?  
-   - Do certain regions (e.g., Global South vs. Global North) receive disproportionately fewer or slower reviews?
+The published analysis asks how institutional oversight is structured across:
 
-3. **Discrepancy Analysis**  
-   - Which topics or regions exhibit the greatest deviation from expected proportionality?  
-   - What patterns emerge in the Board’s selection that may reflect institutional, cultural, or operational biases?
+- geographic and linguistic representation;
+- content-policy domains;
+- adjudicative outcomes;
+- summary versus full-panel review pathways; and
+- Global North / Global South case distribution.
 
-4. **Impact on Vulnerable Communities**  
-   - How frequently are cases affecting marginalized or at-risk groups (e.g., ethnic minorities, LGBTQIA+ communities, health-related content) selected?  
-   - Do these patterns align with the Oversight Board’s mandate to protect freedom of expression and human rights?
+## Data and workflow
 
-## Methodology
+The repository contains the working data and collection/cleaning scripts used to build the case-level dataset from publicly available Oversight Board decisions.
 
-1. **Data Collection**  
-   - **Scraping Oversight Board Decisions**: Programmatically harvest all publicly available decisions from the Board’s website (`https://www.oversightboard.com/decision/`), including metadata (slug, title, date, topics, categories, outcome) and full decision text.  
-   - **Enrichment**: For each decision URL, extract additional fields such as geographic region(s) mentioned and standardized topic classifications from within the decision body.
+```text
+Oversight-Board-Case-Analysis/
+├── README.md
+├── CITATION.cff
+├── LICENSE
+└── data/
+    ├── scrape_oversight_board.py
+    ├── fetch_details.py
+    ├── clean_analysis_ready.py
+    ├── decisions_enriched.csv
+    └── decisions_cleaned .csv
+```
 
-2. **Data Cleaning & Structuring**  
-   - Consolidate multi-row decision texts into single “body” fields.  
-   - Normalize metadata columns (e.g., date formats, topic labels, region names).  
-   - Handle missing or inconsistent category/outcome entries by cross-referencing with official decision pages.
+### Collection and preparation
 
-3. **Quantitative Analysis**  
-   - **Descriptive Statistics**: Compute frequency distributions for topics and regions.  
-   - **Proportionality Metrics**: Compare observed frequencies to baseline distributions (e.g., volume of user appeals by topic/region where available).  
-   - **Discrepancy Indices**: Calculate statistical measures (e.g., chi-square, Gini coefficients) to identify over/under-representation.
+The workflow:
 
-4. **Visualization & Interpretation**  
-   - Generate bar charts, heatmaps, and geographic maps to illustrate selection patterns.  
-   - Contextualize findings with qualitative insights from Board mandates and external critiques.
+1. collects publicly available Oversight Board decisions;
+2. extracts decision metadata and full text;
+3. enriches cases with variables used in the analysis;
+4. cleans and standardizes the case-level dataset; and
+5. supports the quantitative analysis reported in the published article.
 
-5. **Reproducibility**  
-   - All data-processing and analysis scripts are tracked in this repository.  
-   - A `requirements.txt` captures environment dependencies.  
-   - Jupyter notebooks accompany each analysis step with narrative explanations.
+## Scope and interpretation
 
----
+The dataset represents the subset of disputes that entered the Oversight Board’s formal review process. It should therefore be interpreted as a record of **institutional attention and procedural filtering**, not as a representative sample of all content-moderation disputes on Meta platforms.
 
-*References*  
-- Douek, E. (2024). “The Meta Oversight Board and the Empty Promise of Legitimacy.” *Harvard Journal of Law & Technology*, 37(2).  
-- Hamda, R. (2021). “Facebook’s ‘Dangerous Individuals and Organizations’ List Concerns Oromo Users in Ethiopia.” *Global Voices*.  
-- Newton, C. (2023). “Meta’s Oversight Board Is Too Slow.” *The Verge*.  
-- Wong, D., & Floridi, L. (2022). “Meta’s Oversight Board: A Review and Critical Assessment.” *Philosophy & Technology*.  
+## Published article
+
+**Platform Oversight in Practice: How Language Shapes Procedure, Not Outcome, in Meta’s Oversight Board**  
+_Journal of Online Trust and Safety_, Vol. 3, No. 3 (2026)  
+Published September 8, 2026  
+DOI: [10.54501/jots.v3i3.333](https://doi.org/10.54501/jots.v3i3.333)
+
+## Citation
+
+Please cite the published article when using findings from this project. Citation metadata for the repository is also provided in [`CITATION.cff`](CITATION.cff).
+
+## Author
+
+**Endalkachew H. Chala**  
+[ORCID](https://orcid.org/0000-0001-6210-6706) · [Academic website](https://endalk-chala.github.io/) · [GitHub](https://github.com/Endalk-Chala)
+
+## License
+
+See [`LICENSE`](LICENSE) for the repository license. Users should also respect any terms governing material originally published by the Meta Oversight Board.
